@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="ust">
+        <!-- Logo kısmı -->
+        <div class="logo">
+            <img class="nohu-icon" src="images/logo.png">
+            
+        </div>
+        <div class="satis-ofisi">
+            Nohu Satış Ofisi
+        </div>
+        <!-- Menü kısmı -->
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="anasayfa.html">Anasayfa</a></li>
+                    <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="ürünler.html">Ürünler</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="login.html" style="text-decoration: none; cursor: pointer;">
+            <img src="   https://cdn-icons-png.flaticon.com/512/2321/2321232.png " width="25" height="25" alt="" title="" class="img-small">
+            </a>
+    
+    </div>
+
+
+    <div class="confirmation-container">
+        <div class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="green" width="72px" height="72px">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+            </svg>
+        </div>
+        <h1>Siparişiniz oluşturulmuştur!</h1>
+        <p>Siparişiniz başarılı bir şekilde oluşturulmuştur. Tarafınıza en kısa süre içerisinde dönüş sağlanacaktır.</p>
+        <a href="anasayfa.html" class="back-button">Anasayfaya Dön</a>
+    </div>
+
+
+</body>
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: rgb(245, 247, 248);
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+}
+
+.ust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+    
+}
+
+
+.nohu-icon {
+    width: 150px;
+    height: 50px;
+    width: auto;
+    background-color: #f8f8f8;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    
+}
+
+.satis-ofisi {
+    font-size: large;
+    margin-left: -620px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.6s ease;
+    
+}
+
+.menu ul li a:hover {
+    color: #e28648;
+    font-size: 18px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) , 0px 6px 20px rgba(0, 0, 0, 0.15);  /* Daha küçük bir yarıçap ve daha yoğun bir opaklık (%20). Bu gölge, objeye daha yakın olan ve ışığın oluşturduğu ilk net gölgeyi simgeler.  Daha geniş bir yarıçap ve daha düşük opaklık (%15). Bu, objeden uzaklaşan ışığın oluşturduğu daha yayılmış ve yumuşak bir gölgeyi ifade eder. */
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 4px 8px;   /* ekstra bir aaln eklemek */
+    background: rgba(255, 102, 0, 0.1); /* Hafif bir arka plan efekti */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    
+}
+.contact {
+    transition: all 0.6s ease;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(45deg, rgba(46, 31, 114, 0) 10%, rgb(11, 53, 30) 10%);
+    color: rgb(72, 88, 106);
+    display: flex;
+    height: 40px;
+    justify-content:end;
+    margin-right: 0px;
+    position: relative;    /* position: relative; bir öğe, içindeki position: absolute; olan alt öğeler için bir referans noktası oluşturur. Yani, bu öğenin sınırları, alt öğeler için bağlayıcı bir çerçeve olur. */
+    width: 300px;
+    margin-right: -370px;
+    
+}
+
+.phone-number{
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    padding-top: 10px;
+    
+    
+}
+.icons-all{
+    background-color:rgb(11, 53, 30) ;
+}
+.icons{
+    
+    background-color: rgb(11, 53, 30);
+    height: 15px;
+    justify-content: start;
+    margin-left: 28px;
+    margin-top: 11px;
+    transition: transform 0.3s ease;
+    
+}
+.icons2{
+    color: white;
+    
+    height: 15px;
+    margin-left: 9px; 
+    margin-right: 10px;
+    margin-top: 11px;
+    transition: transform 0.3s ease;
+    
+     
+}
+.icons:hover {
+    transform: scale(1.4);
+}
+.icons2:hover{
+    transform: scale(1.4);
+}
+
+
+.confirmation-container {
+    text-align: center;
+  padding: 20px;
+    padding-top: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.23);
+  max-width: 900px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  max-height: 800px;
+  height: 300px;
+  padding-top: 50px;
+}
+
+.checkmark {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0,140,167,255);
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+
+</html>

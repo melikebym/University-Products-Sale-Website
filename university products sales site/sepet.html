@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alışveriş Sepeti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Alışveriş Sepeti</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ürün Görseli</th>
+                    <th>Ürün İsmi</th>
+                    <th>Ürün Adedi</th>
+                    <th>Fiyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="images/elma_preview_rev_1.png" alt="Elma" class="product-img"></td>
+                    <td>Elma</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>
+                        <button class="delete-btn">Ürünü Sil</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-total">
+            Toplam: ₺12,00
+        </div>
+        <div class="cart-actions">
+            <button class="continue-btn">Alışverişe Devam Et</button>
+            <button class="complete-btn">Alışverişi Tamamla</button>
+        </div>
+    </div>
+
+    <script>
+        // Yerel depolamadan sepeti al
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Tablo gövdesini seç
+        const tbody = document.querySelector('tbody');
+        
+        // Toplam fiyatı hesapla
+        let totalPrice = 0;
+        
+        // Sepet boşsa
+        if (cart.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center;">Sepetiniz boş.</td></tr>';
+        } else {
+            // Her ürün için tablo satırı oluştur
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+        
+                // Ürün görseli
+                row.innerHTML += `
+                    <td><img src="${item.image}" alt="${item.name}" class="product-img"></td>
+                `;
+        
+                // Ürün ismi
+                row.innerHTML += `
+                    <td>${item.name}</td>
+                `;
+        
+                // Ürün adedi
+                row.innerHTML += `
+                    <td>${item.quantity}</td>
+                `;
+        
+                // Ürün fiyatı
+                row.innerHTML += `
+                    <td>${item.price}</td>
+                `;
+        
+                // Ürünü sil butonu
+                row.innerHTML += `
+                    <td><button class="delete-btn" data-name="${item.name}">Ürünü Sil</button></td>
+                `;
+        
+                // Tabloya satırı ekle
+                tbody.appendChild(row);
+        
+                // Toplam fiyatı hesapla
+                totalPrice += parseFloat(item.price.replace('₺', ''));
+            });
+        }
+        
+        // Toplam fiyatı görüntüle
+        document.querySelector('.cart-total').textContent = `Toplam: ₺${totalPrice.toFixed(2)}`;
+        
+        // Ürünü sil butonuna tıklandığında
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+        
+                // Sepeti güncelle
+                const updatedCart = cart.filter(item => item.name !== productName);
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+        
+                // Sayfayı yenile
+                location.reload();
+            });
+        });
+        </script>
+</body>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table thead tr {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+ button {
+    background-color: rgba(0,140,167,255);
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s;
+    border: 1px solid rgba(0,140,167,255);
+}
+
+ button:hover {
+    background-color: rgb(45, 45, 155);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 2y0px;
+    border: 1px solid rgb(45, 45, 155);
+}
+</style>
+</html>

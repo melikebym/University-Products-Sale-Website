@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Detayları</title>
+</head>
+<body>
+
+    
+    <div class="wrapper">
+        <div class="container">
+            <form action="">
+                <h1>
+                    <i class="fas fa-shipping-fast"></i>
+                    Ödeme Detayları
+                </h1>
+                <div class="name">
+                    <div>
+                        <label for="f-name">İsim</label>
+                        <input type="text" name="f-name">
+                    </div>
+                    <div>
+                        <label for="l-name">Soyisim</label>
+                        <input type="text" name="l-name">
+                    </div>
+                </div>
+                <div class="street">
+                    <label for="name">Cadde</label>
+                    <input type="text" name="address">
+                </div>
+                <div class="address-info">
+                    <div>
+                        <label for="city">Şehir</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div>
+                        <label for="state">Ülke</label>
+                        <input type="text" name="state">
+                    </div>
+                    <div>
+                        <label for="zip">Şehir Kodu</label>
+                        <input type="text" name="zip">
+                    </div>
+                </div>
+                <h1>
+                    <i class="far fa-credit-card"></i> Ödeme Bilgileri
+                </h1>
+                <div class="cc-num">
+                    <label for="card-num">Kart Numarası</label>
+                    <input type="text" name="card-num" placeholder="**** **** **** ****">
+                </div>
+                <div class="cc-info">
+                    <div>
+                        <label for="card-num">Kart Sahibi Adı</label>
+                        <input type="text" name="expire">
+                    </div>
+                    <div>
+                        <label for="card-num">CCV</label>
+                        <input type="text" name="security" placeholder="***">
+                    </div>
+                </div>
+                <div class="btns">
+                    <button><a href="siparis-onaylandi.html" style="text-decoration: none;" >Onayla</a></button>
+                    
+                    <button><a href="anasayfa.html" style="text-decoration: none;">Anasayfaya Dön</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('button a').addEventListener('click', function(event) {
+            event.preventDefault(); // <a> etiketinin varsayılan davranışını engelle
+        
+            // Tüm input alanlarını kontrol et
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let isValid = true;
+        
+            inputs.forEach(input => {
+                if (!input.value.trim()) { // Eğer input boşsa
+                    isValid = false;
+                }
+            });
+        
+            if (!isValid) {
+                alert('Lütfen tüm alanları doldurun.'); // Uyarı mesajı göster
+            } else {
+                // Tüm alanlar doluysa, bağlantıya yönlendir
+                window.location.href = "siparis-onaylandi.html";
+            }
+        });
+        </script>
+</body>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: rgb(245, 247, 248);
+}
+
+
+.wrapper {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 9px 13px 25px 0px rgba(0, 0, 0, 0.48);
+  animation: slideUp 1s ease;
+  border-radius: 10px;
+  /* Sayfanın tam ortasında olması için eklenen kodlar */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0; /* Başlangıçta görünmez */
+        transform: translate(-50%, 100%); /* Sayfanın altında başlar */
+    }
+    100% {
+        opacity: 1; /* Tamamen görünür */
+        transform: translate(-50%, -50%); /* Sayfanın tam ortasına gelir */
+    }
+}
+
+
+.container {
+    width: 65%;
+    padding: 5% 10%;
+}
+
+h1 {
+    align-self: center;
+}
+
+form {
+    width: 100%;
+
+    >* {
+        margin-top: 20px;
+    }
+
+    input {
+        width: 100%;
+        min-height: 25px;
+        border: 1px solid;
+        font-size: 1rem;
+        letter-spacing: .15rem;
+        margin-top: 5px;
+        border-radius: 4px;
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 10px;
+        letter-spacing: 1px;
+    }
+
+    h1:nth-of-type(2) {
+        margin-top: 10%;
+    }
+}
+
+.name {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+
+    div {
+        width: 45%;
+    }
+}
+
+.address-info {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        width: 30%;
+    }
+}
+
+.cc-info {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        width: 45%;
+    }
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    button {
+        margin: 3px 0;
+        height: 30px;
+        width: 40%;
+        color: #fff;
+        background-color: rgba(0,140,167,255);
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 15px;
+        letter-spacing: 2px;
+
+        &:hover {
+            animation-name: btn-hov;
+            animation-duration: 550ms;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+
+button a {
+            margin: 3px 0;
+        height: 30px;
+        width: 40%;
+        color: #fff;
+        background-color: rgba(0,140,167,255);
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 15px;
+        letter-spacing: 2px;
+
+        &:hover {
+            animation-name: btn-hov;
+            animation-duration: 550ms;
+            animation-fill-mode: forwards;
+        }
+}
+
+
+@keyframes btn-hov {
+    100% {
+        background-color: rgb(45, 45, 155);
+        color: #fff;
+        transform: scale(1.05)
+    }
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+@media (max-width: 736px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .btns {
+        align-items: center;
+
+        button {
+            width: 50%;
+        }
+    }
+
+    form h1 {
+        text-align: center;
+    }
+
+    .name,
+    .address-info,
+    .cc-info {
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+
+        div {
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            display: flex;
+        }
+    }
+
+    .street,
+    .cc-num {
+        text-align: center;
+    }
+
+    input {
+        margin: 5px 0;
+        min-height: 30px;
+    }
+}
+</style>
+</html>

@@ -1,0 +1,1154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: rgb(245, 247, 248);
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+}
+
+.ust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd;
+    
+}
+
+
+.nohu-icon {
+    width: 150px;
+    height: 50px;
+    width: auto;
+    background-color: #f8f8f8;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    
+}
+
+.satis-ofisi {
+    font-size: large;
+    margin-left: -620px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.6s ease;
+    
+}
+
+.menu ul li a:hover {
+    color: #e28648;
+    font-size: 18px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) , 0px 6px 20px rgba(0, 0, 0, 0.15);  /* Daha küçük bir yarıçap ve daha yoğun bir opaklık (%20). Bu gölge, objeye daha yakın olan ve ışığın oluşturduğu ilk net gölgeyi simgeler.  Daha geniş bir yarıçap ve daha düşük opaklık (%15). Bu, objeden uzaklaşan ışığın oluşturduğu daha yayılmış ve yumuşak bir gölgeyi ifade eder. */
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 4px 8px;   /* ekstra bir aaln eklemek */
+    background: rgba(255, 102, 0, 0.1); /* Hafif bir arka plan efekti */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    
+}
+.contact {
+    transition: all 0.6s ease;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(45deg, rgba(46, 31, 114, 0) 10%, rgb(11, 53, 30) 10%);
+    color: rgb(72, 88, 106);
+    display: flex;
+    height: 40px;
+    justify-content:end;
+    margin-right: 0px;
+    position: relative;    /* position: relative; bir öğe, içindeki position: absolute; olan alt öğeler için bir referans noktası oluşturur. Yani, bu öğenin sınırları, alt öğeler için bağlayıcı bir çerçeve olur. */
+    width: 300px;
+    margin-right: -370px;
+    
+}
+
+.phone-number{
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+    padding-top: 10px;
+    
+    
+}
+.icons-all{
+    background-color:rgb(11, 53, 30) ;
+}
+.icons{
+    
+    background-color: rgb(11, 53, 30);
+    height: 15px;
+    justify-content: start;
+    margin-left: 28px;
+    margin-top: 11px;
+    transition: transform 0.3s ease;
+    
+}
+.icons2{
+    color: white;
+    
+    height: 15px;
+    margin-left: 9px; 
+    margin-right: 10px;
+    margin-top: 11px;
+    transition: transform 0.3s ease;
+    
+     
+}
+.icons:hover {
+    transform: scale(1.4);
+}
+.icons2:hover{
+    transform: scale(1.4);
+}
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes SlideInUp{
+    from{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.baslik {
+    position: absolute;
+    top: 19%;
+    left: 10%;
+    width: 700px;
+    transition: all 0.6s ease-out;
+    animation: SlideInUp 1s ease-out forwards;
+}
+
+.baslik h1 {
+    margin: 0;
+}
+
+.img-text {
+    flex: 1; /* Alanın %100'ünü kaplar */
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: bold;
+    
+}
+.img-text h1{
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.img-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: rgb(222, 226, 231);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+.img-text button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: rgba(0,140,167,255);
+    color: white;
+    width: 200px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 40px;
+    cursor: pointer;
+    transition:  0.3s;
+    border: 1px solid rgba(0,140,167,255);
+}
+
+.img-text button:hover {
+    background-color: rgb(45, 45, 155);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: 1px solid rgb(45, 45, 155);
+}
+
+.elementor-iconelementor-animation-{
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 0%;
+    box-sizing: border-box;
+    color: rgb(85, 181, 89);
+    display: inline-block;
+    fill: rgb(85, 181, 89);
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 35px;
+    
+    font-weight: 400;
+    height: 70px;
+    letter-spacing: normal;
+    line-height: 35px;
+    padding-bottom: 17.5px;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+    padding-top: 17.5px;
+    text-align: center;
+    
+    width: 70px;
+}
+
+@keyframes SlideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.ana-f {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1px;
+    align-items: center;
+    transition: all 0.6s ease-out;
+    animation: SlideInRight 1s ease-out forwards; /* 1 kez çalışacak */
+    
+}
+
+
+
+.elementor-iconelementor-animation-{
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 0%;
+    box-sizing: border-box;
+    color: rgb(85, 181, 89);
+    display: inline-block;
+    fill: rgb(85, 181, 89);
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: 400;
+    height: 70px;
+    letter-spacing: normal;
+    line-height: 35px;
+    padding-bottom: 17.5px;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
+    padding-top: 20px;
+    text-align: center;
+    
+    width: 70px;
+}
+
+.f{
+    border-radius: 15px;
+    margin-top: -150px;
+    align-content: flex-start;
+    background-color:white;           
+    color: rgb(72, 88, 106);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 16px;          
+    font-weight: 400;
+    height: 362.25px;          
+    line-height: 22.4px;
+    position: relative;         
+    width: 300px;           
+    justify-content: center;  /* Yatayda ortalamak için */
+    gap: 20px;
+    align-items: center;    
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px 0px ;
+}
+.f-bas {
+    border-radius: 15px;
+    margin-top: -150px;
+    align-content: flex-start;
+    background-color:rgba(0,140,167,255);           
+    color: rgb(72, 88, 106);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 16px;          
+    font-weight: 400;
+    height: 362.25px;          
+    line-height: 22.4px;
+    position: relative;         
+    width: 300px;           
+    justify-content: center;  /* Yatayda ortalamak için */
+    gap: 20px;
+    align-items: center;    
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px 0px ;
+}
+.elementor-icon-box-title{
+    margin-top: -15px;           
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.2px;
+    margin-bottom: 14px;
+    text-align: center;         
+    width: 236px;    
+}
+.elementor-icon-box-description{
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    height: 89.625px;
+    letter-spacing: normal;
+    line-height: 22.4px;  
+    text-align: center;
+    text-size-adjust: 100%;
+    text-transform: none;
+    width: 236px;
+    padding: 0px 6px;
+    margin-top: -11px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 125px;
+}
+
+.content {
+    display: flex;
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgb(245, 247, 248);
+    position: relative;
+    max-width: 75%;
+    opacity: 0;
+    transform: translateY(100px); /* İlk başta içerik aşağıda olacak */
+    transition: all 1s ease; /* Animasyon efekti */
+}
+
+.baklava-image {
+    width: 300px;
+    height: 280px;
+    margin-bottom: 20px;
+    background-color: rgb(245, 247, 248);
+}
+
+.content p {
+    font-size: 29px;
+    color: #949090;
+    margin-top: 120px;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 220px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: rgb(45, 45, 155);
+}
+
+.content.animate {
+    opacity: 1;
+    transform: translateY(0); /* İçerik yukarı doğru hareket edecek */
+}
+
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0;
+    position: relative;
+    gap: 4px;
+    margin-top: -120px;
+}
+
+.card {
+    border-radius: 15px;
+    align-content: flex-start;
+    background-color:rgba(0,140,167,255);           
+    color: rgb(72, 88, 106);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 16px;          
+    font-weight: 400;
+    height: 362.25px;          
+    line-height: 22.4px;
+    position: relative;         
+    width: 300px;           
+    justify-content: center;  /* Yatayda ortalamak için */
+    gap: 20px;
+    align-items: center;    
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 60px 0px ;
+    opacity: 0;  /* Initially hidden */
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.card-icon{
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.2px;
+    margin-bottom: 14px;
+    text-align: center;         
+    width: 236px;  
+}
+
+
+.left-card {
+    transform: translateX(-100%);  /* Ekrandan dışarıda başlar */
+}
+
+.center-card {
+    transform: scale(0.7);  /* Küçük başlar */
+}
+
+.right-card {
+    transform: translateX(100%);  /* Ekrandan dışarıda başlar */
+}
+
+.animate-left {
+    transform: translateX(0);   /
+    opacity: 1;                 /* Görünür hale gelir */
+}
+
+.animate-center {
+    transform: scale(1);        /* Tam boyut */
+    opacity: 1;
+}
+
+.animate-right {
+    transform: translateX(0);   /* Merkeze gelir */
+    opacity: 1;
+}
+
+.cok-satanlar{
+    margin-left: 396px;
+    margin-bottom: 50px;
+}
+.cok-satanlar h1{
+    color: rgba(51, 51, 53, 0.74);
+
+}
+
+
+.card-toplam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.card3 {
+    margin-left: 5px;
+    border: 1px solid beige;
+    border-radius: 10px;
+    background-color: white;
+    line-height: 22px;
+    color: rgb(78, 88, 106);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 21px 21px;
+    width: 327px;
+    height: 550px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease, width 0.5s ease, height 0.5s ease;    cursor: pointer;
+}
+
+.card3.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.card3.active:hover{
+    width: 360px;
+    height: 580px;
+    border-radius: 15px;
+    background-color: #8080801c;
+}
+
+
+.card3-flx {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card3-baslik h1 {
+    font-family: Inter, sans-serif;
+    height: 20px;
+    line-height: 10px;
+    color: rgba(51, 51, 53, 0.74);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.card3-img {
+    margin-top: 10px;
+}
+.card3-txt-button {
+    text-align: center;
+    transition: margin-top 0.5s ease, background-color 0.5s ease; /* margin-top animasyonu */
+}
+
+.card3.active:hover .card3-txt-button button{
+    margin-top: 30px;
+}
+.card3-txt-button button {
+    margin-left: 30px;
+    padding-bottom: 10px;
+    padding: 8px 16px;
+    background-color: rgba(0, 140, 167, 255);
+    color: white;
+    width: 250px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.9s;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 140, 167, 255);
+}
+
+
+.card3-txt-button button:hover {
+    background-color: rgb(45, 45, 155);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: 1px solid rgb(45, 45, 155);
+    display: block;
+    margin: 0 auto;
+}
+
+
+.paragraf {
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.card3-txt-button p {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: rgb(72, 88, 106);
+    text-align: center;
+}
+
+.svg-elements2 {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+
+.container-3 {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    overflow: hidden; 
+    margin-top: 200px;
+}
+
+.img_15 img {
+    
+    width: 100%;
+    height: 900px;
+    object-fit: cover; 
+    opacity: 0.7;
+}
+
+.container-3:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.container3-txt {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    
+    z-index: 2;
+}
+
+.container3-txt h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 3px;
+    line-height: 26px;
+    text-transform: uppercase;    
+    margin: 45px 0 30px 0;
+}
+
+
+
+.container3-txt p b{
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #193319;
+}
+
+.container3-txt p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 0;
+    font-family: Inter, sans-serif;
+    background-color: #e8e8e840;
+    border-radius: 15px;
+    color: white;
+}
+
+.container3-txt em{
+    color: rgb(255, 255, 255);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 22.4px;
+}
+
+.card4toplam {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto; 
+    gap: 20px; 
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.card4-1 {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+    height: 170px;
+    background-color: #ffffffc9;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+    padding: 12px;
+}
+
+.card4-img{
+    width: 100px;
+    height: 170px;
+    
+}
+.card4-alt-img{
+    height: 75px;
+    padding: 47px 20px;
+    
+
+}
+
+.card4-txt{
+    flex: 1;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.card4-txt h1{
+    font-size: 26px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: rgb(11, 39, 53);
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    
+} 
+
+.card4-txt p{
+    text-align: left;
+    font-size: 17px;
+    font-family: Inter, sans-serif;
+    color: rgb(72, 88, 106);
+    font-weight: 400;
+    line-height: 22.4px;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%); /* Aşağıdan başlar */
+        opacity: 0; /* Başlangıçta görünmez */
+    }
+    100% {
+        transform: translateY(0); /* Yukarı kayarak normale döner */
+        opacity: 1; /* Görünür hale gelir */
+    }
+}
+
+/* Animasyon başlangıç durumu */
+.container3-txt h1,
+.container3-txt p,
+.card4-txt h1,
+.card4-txt p {
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(100%); /* Başlangıçta aşağıda */
+    animation-duration: 0.5s; /* Animasyon süresi */
+    animation-fill-mode: forwards; /* Animasyon bittiğinde durumu korur */
+    animation-timing-function: ease-in-out; /* Yumuşak geçiş */
+}
+
+/* Scroll tetikleyicisi için sınıf */
+.animate-slideUp {
+    animation-name: slideUp; /* Aşağıdan yukarıya animasyonu */
+}
+
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  
+  .product-details {
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #e74c3c;
+  }
+  
+  .product-details p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  button.prev-btn, button.next-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.prev-btn:hover, button.next-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  button.prev-btn {
+    position: absolute;
+    left: 0;
+  }
+  
+  button.next-btn {
+    position: absolute;
+    right: 0;
+  }
+  
+
+.content-container  {
+    margin-top: 50px;
+    text-align: center;
+    max-width: 800px;
+    height: 350px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 500px;
+    position: absolute;
+    border: 1px solid #202020; /* Kenarlık animasyonu için transparan kenarlık */
+    color: rgb(73, 71, 71);
+    background-size: 200% 100%; /* Animasyon için gerekli */
+    background-clip: padding-box;
+    animation: borderSlide 3s linear infinite; /* Kenarlık animasyonu */
+    cursor: pointer;
+    outline: none;
+}
+
+.content-container:before{
+    content: "";
+    position: absolute;
+    width: 800px;
+    margin: auto;
+    height: 65px;
+    background-color: #fff;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    transition: width 0.5s,
+                height 0.5s 0.5s;
+
+}
+.content-container::after{
+    content: "";
+    position: absolute;
+    width: 800px;
+    margin: auto;
+    height: 65px;
+    background-color: #fff;
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    transition: width 0.5s,
+                height 0.5s 0.5s;
+}
+.content-container:hover:after,
+.content-container:hover:before{
+    width: 0;
+    height: 6px;
+    transition: height 0.9s,
+                width 0.9s 0.9s;
+}
+
+.hr-design {
+    width: 75%;
+}
+
+.container-5 {
+    margin-top: 100px;
+    margin-bottom: 110px;
+    position: relative;
+    width: 100%;
+    height: 700px; /* Yüksekliği sabitlenir */
+    overflow: hidden; /* Görsel taşmalarını önler */
+    text-align: center;
+    align-items: center;
+}
+
+.container-5:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Karartma efekti */
+    z-index: 1;
+}
+
+/* İçerik düzeni */
+.container-5-flx {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 700px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Başlık */
+.container-5-txt h1 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 60px;
+    color: white; /* Beyaz renk */
+    font-weight: 800;
+    line-height: 73px;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+/* Açıklama yazısı */
+.container-5-txt p {
+    font-family: Inter, sans-serif;
+    font-size: 25px;
+    color: white; /* Beyaz renk */
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Buton */
+.container-5-button a {
+    margin-top: 60px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(251, 136, 70); /* Buton rengi */
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 160px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    
+}
+
+.container-5-button a:hover {
+    background-color: rgb(45, 45, 155); /* Hover durumu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(45, 45, 155);
+}
+.img_16 {
+    width: 1920px;
+    height: 700px;
+    object-fit: cover; /* Görselin taşmadan kapsayıcıya uymasını sağlar */
+    opacity: 0.9;
+}
+
+/* Soldan sağa animasyon 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+.container-5-txt h1,
+.container-5-txt p,
+.container-5-button a {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.animate-slideIn {
+    animation-name: slideInFromLeft;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+*/
+
+.sayfa-sonu{
+    margin-top: 50px;
+    background-color: rgb(11, 39, 53);
+    width: 1920px;
+    height: 600px;
+    display: grid; /* Grid yapısını etkinleştir */
+    grid-template-columns: repeat(4, 1fr); /* 2 sütunlu düzen */
+    grid-template-rows: auto; /* Satırların yüksekliği içeriğe göre ayarlanır */
+    gap: 20px; /* Grid hücreleri arasındaki boşluk */
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sayfa-sonu-acıklama{
+    width: 400px;
+    margin-left: 300px;
+
+}
+
+.sayfa-sonu-acıklama-img{
+    margin-top: 40px;
+    height: 50px;
+}
+
+.sayfa-sonu-acıklama-img img{
+    height: 200px;
+    opacity: 0.7;
+}
+
+.sayfa-sonu-acıklama-txt{
+    margin-top: 200px;
+    font-size: 17px;
+    font-family: Inter, sans-serif;
+    color: rgb(110, 118, 115);
+    line-height: 22px;
+}
+
+.icons3 {
+    height: 30px;
+    padding: 10px 10px;
+    background-color: rgb(11, 39, 53);
+    display: flex; /* Flexbox ile ikonları yatayda hizalar */
+    gap: 10px; /* İkonlar arasına boşluk ekler */
+}
+
+.icons3 img {
+    background-color: rgb(11, 39, 53) ;
+    
+    height: 20px; /* Yüksekliği belirleyin */
+    transition: all 0.3s ease; /* Geçiş animasyonu ekler */
+}
+
+.icons3 img:hover {
+    transform: scale(1.2);
+    
+}
+
+.linkler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    margin-left: 40px;
+    gap: 5px;
+  }
+
+  .linkler-h1 {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    line-height: 18px;
+    text-align: left;
+    margin-top: 150px;
+    opacity: 0.7;
+  }
+
+  .linkler-menu {
+    margin-top: 20px;
+    font-family: Inter, sans-serif;
+    margin-bottom: 180px;
+  }
+
+  .linkler-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .linkler-menu ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Metin ve ok ikonunu aynı hizada tutar */
+    gap: 10px; /* İkon ile metin arasında boşluk */
+  }
+
+  .linkler-menu ul li img {
+    height: 10px; /* Ok ikonu boyutu */
+  }
+
+  .linkler-menu ul li a {
+    color: rgb(110, 118, 115);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Inter, sans-serif;
+    line-height: 34px;
+    text-decoration: none;
+  }
+
+  .linkler-menu ul li a:hover {
+    color: rgb(85, 181, 89); /* Hover durumu için renk değişikliği */
+  }
+
+
+  .iletisim2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px;
+    gap: 10px; /* Boşlukları küçültmek için gap değerini 10px yaptım */
+  }
+
+  .iletisim2 h1 {
+    font-size: 36px;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    line-height: 22px;
+    text-align: left;
+    margin-top: 170px;
+    opacity: 0.7;
+  }
+
+  .iletisim2-a {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px; /* Alt boşluğu azaltmak için margin-bottom'u küçülttüm */
+    align-items: center;
+    gap: 10px; /* Aradaki boşluğu küçültmek için gap değerini 10px yaptım */
+  }
+
+  .iletisim2-img img {
+    height: 38px;
+  }
+
+  .iletisim2-txt p {
+    font-size: 20px;
+    color: rgb(110, 118, 115);
+    font-weight: 400;
+    font-family: Inter, sans-serif;
+  }
+
+  /* Yeni eklenen kısmın stilleri */
+  .iletisim2-c {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 80px;
+  }

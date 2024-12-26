@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler</title>
+    <link rel="stylesheet" href="ürünler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Sepet listesi stilini güncelle */
+        .shopping-cart-list {
+            position: absolute;
+            width: 25rem;
+            right: -0.75rem;
+            top: 2.9rem;
+            padding: 1rem;
+            z-index: 1;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Başlangıçta gizli */
+            margin-right: 50px;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        .btn-cart {
+            cursor: pointer;
+        }
+
+        /* Sepet simgesi */
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+
+.item-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.item-info span {
+    margin-right: 10px;
+}
+
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  border: 1px solid #28a745 ;
+  text-align: center;
+  vertical-align: middle;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-left: 255px;
+  margin-top: 20px;}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="ust">
+        <!-- Logo kısmı -->
+        <div class="logo">
+            <img class="nohu-icon" src="images/logo.png">
+        </div>
+        <div class="satis-ofisi">
+            Nohu Satış Ofisi
+        </div>
+        <!-- Menü kısmı -->
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="anasayfa.html">Anasayfa</a></li>
+                    <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+                    <li><a href="ürünler.html">Ürünler</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="ust-btns" style="display: flex;">
+        <div class="cart-icon" style="margin-right: 20px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/16349/16349059.png " width="25" height="25" alt="Sepet" title="Sepet" class="img-small">
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2321/2321232.png" width="25" height="25" alt="Sepet" title="Sepet" class="img-small">
+        
+        </div>
+
+    </div>
+
+    <div class="shopping-cart-list" id="cart-list">
+      <h3>Sepetiniz</h3>
+      <ul id="cart-items"></ul>
+      <div class="total-price">Toplam Fiyat: <span id="total-price">0₺</span></div>
+      <div>
+        <a href="siparis-kontrol.html" style="text-decoration: none;">
+          <button type="submit" class="btn btn-success">
+          <img src="https://cdn-icons-png.flaticon.com/128/428/428173.png" loading="lazy" alt="Shopping cart " title="Shopping cart " width="14" height="14">
+          Sepeti Onayla
+          </button>
+          </a>
+      </div>
+  </div>
+
+
+
+
+
+    <div class="container">
+        <div class="urunler-menu">
+            <nav>
+                <ul class="urunler-menu-ul">
+                    <li><div class="a" id="tum-urunler">Tüm Ürünler</div></li>
+                    <li><div class="a" id="sut-ve-yumurta-urunleri">Süt ve Yumurta Ürünleri</div></li>
+                    <li><div class="a" id="gida-urunleri">Gıda Ürünleri</div></li>
+                    <li><div class="a" id="kuru-gida-urunleri">Kuru Gıdalar ve Tahıllar</div></li>
+                    <li><div class="a" id="tekstil-aksesuar-urunleri">Tekstil ve Aksesuarlar</div></li>
+                    <li><div class="a" id="ev-dekorasyon-urunleri">Ev Dekorasyonu ve El Sanatları</div></li>
+                    <li><div class="a" id="dogal-urunler">Doğal Ürünler</div></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="grid-duzen">
+            <div class="card" id="1a">
+                <div class="card-container">
+                    <img src="images/süt.png" alt="Not Fount">
+                    <p>Günlük Süt</p>
+                </div>
+                <div class="card-ek-container">
+                  <div class="card-info">
+                    <p>Günlük Süt</p>
+                    <p style="margin-top: -5px;">20₺</p>
+                  </div>
+                    <div style="display: flex; margin-bottom: -50px;">
+                      <button class="btn-add">Sepete Ekle</button>
+                      <a href="ürün2.html" style="text-decoration: none;"><button >Ürün Detay</button></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="card" id="2a">
+              <div class="card-container">
+                  <img src="images/dogal-suzme-bal.png" alt="Not Found">
+                  <p>Süzme Bal</p>
+              </div>
+              <div class="card-ek-container">
+                  <div class="card-info">
+                      <p>Süzme Bal</p>
+                      <p style="margin-top: -5px;">350₺</p>
+                  </div>
+                  <div style="display: flex; margin-bottom: -50px;">
+                      <button class="btn-add">Sepete Ekle</button>
+                      <a href="ürün3.html" style="text-decoration: none;">
+                          <button>Ürün Detay</button>
+                      </a>
+                  </div>
+              </div>  
+          </div>
+          
+
+
+          <div class="card" id="3a">
+            <div class="card-container">
+                <img src="images/tişört_preview_rev_1.png" alt="Not Found">
+                <p>Tişört</p>
+            </div>
+            <div class="card-ek-container">
+                <div class="card-info">
+                    <p>Tişört</p>
+                    <p style="margin-top: -5px;">60₺</p>
+                </div>
+                <div style="display: flex; margin-bottom: -50px;">
+                    <button class="btn-add">Sepete Ekle</button>
+                    <a href="ürün4.html" style="text-decoration: none;">
+                        <button>Ürün Detay</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="card" id="4a">
+          <div class="card-container">
+              <img src="images/sapka_preview_rev_1.png" alt="Not Found">
+              <p>Şapka</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Şapka</p>
+                  <p style="margin-top: -5px;">25₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün5.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="5a">
+          <div class="card-container">
+              <img src="images/islemeli-havlu_preview_rev_1.png" alt="Not Found">
+              <p>İşlemeli Havlu</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>İşlemeli Havlu</p>
+                  <p style="margin-top: -5px;">50₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün6.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="8a">
+          <div class="card-container">
+              <img src="images/anahtarlik_preview_rev_1.png" alt="Not Found">
+              <p>Anahtarlık</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Anahtarlık</p>
+                  <p style="margin-top: -5px;">25₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün7.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="6a">
+          <div class="card-container">
+              <img src="images/kupa-bardak_preview_rev_1.png" alt="Not Found">
+              <p>Kupa Bardak</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Kupa Bardak</p>
+                  <p style="margin-top: -5px;">40₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün8.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="7a">
+          <div class="card-container">
+              <img src="images/spor-canta_preview_rev_1.png" alt="Not Found">
+              <p>Spor Çanta</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Spor Çanta</p>
+                  <p style="margin-top: -5px;">50₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün9.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="9a">
+          <div class="card-container">
+              <img src="images/magnet_preview_rev_1.png" alt="Not Found">
+              <p>Magnet</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Magnet</p>
+                  <p style="margin-top: -5px;">15₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün10.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="10a">
+          <div class="card-container">
+              <img src="images/elma_preview_rev_1.png" alt="Not Found">
+              <p>Elma (1 Kilogram)</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Elma</p>
+                  <p style="margin-top: -5px;">12₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün1.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="11a">
+          <div class="card-container">
+              <img src="images/şeftali_preview_rev_1.png" alt="Not Found">
+              <p>Şeftali (1 Kilogram)</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Şeftali</p>
+                  <p style="margin-top: -5px;">20₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün11.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="12a">
+          <div class="card-container">
+              <img src="images/sut-misiri_preview_rev_1.png" alt="Not Found">
+              <p>Süt Mısırı (Adet)</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Süt Mısırı</p>
+                  <p style="margin-top: -5px;">5₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün12.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="13a">
+          <div class="card-container">
+              <img src="images/nektari.png" alt="Not Found">
+              <p>Nektari (1 Kilogram)</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Nektari</p>
+                  <p style="margin-top: -5px;">15₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün13.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+      <div class="card" id="14a">
+          <div class="card-container">
+              <img src="images/tam-bugday-unu_preview_rev_1.png" alt="Not Found">
+              <p>Tam Buğday Unu (5 Kilogram)</p>
+          </div>
+          <div class="card-ek-container">
+              <div class="card-info">
+                  <p>Tam Buğday Unu</p>
+                  <p style="margin-top: -5px;">75₺</p>
+              </div>
+              <div style="display: flex; margin-bottom: -50px;">
+                  <button class="btn-add">Sepete Ekle</button>
+                  <a href="ürün14.html" style="text-decoration: none;">
+                      <button>Ürün Detay</button>
+                  </a>
+              </div>
+          </div>  
+      </div>
+      
+
+      <div class="card" id="15a">
+        <div class="card-container">
+            <img src="images/un_preview_rev_1.png" alt="Not Found">
+            <p>Un</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Un (5 Kilogram)</p>
+                <p style="margin-top: -5px;">75₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün15.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+
+
+
+      <div class="card" id="16a">
+        <div class="card-container">
+            <img src="images/63x45-deri-hali_preview_rev_1.png" alt="Not Found">
+            <p>63*105 Cm Deri Halı</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>63*105 Cm Deri Halı</p>
+                <p style="margin-top: -5px;">1250₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün16.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="17a">
+        <div class="card-container">
+            <img src="images/80x145-hali_preview_rev_1.png" alt="Not Found">
+            <p>80*145 Cm Deri Halı</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>80*145 Cm Deri Halı</p>
+                <p style="margin-top: -5px;">2500₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün17.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="18a">
+        <div class="card-container">
+            <img src="images/ayakkabi-canta-deri.jpeg" alt="Not Found">
+            <p>Ayakkabılık Çantalık Deri</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Ayakkabılık Çantalık Deri</p>
+                <p style="margin-top: -5px;">250₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün18.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="19a">
+        <div class="card-container">
+            <img src="images/islemeli-kasnak_preview_rev_1.png" alt="Not Found">
+            <p>İşlemeli Kasnak</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>İşlemeli Kasnak</p>
+                <p style="margin-top: -5px;">50₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün19.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="20a">
+        <div class="card-container">
+            <img src="images/tablo_preview_rev_1.png" alt="Not Found">
+            <p>Tablo</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Tablo</p>
+                <p style="margin-top: -5px;">100₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün20.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="21a">
+        <div class="card-container">
+            <img src="images/adaçayı_preview_rev_1.png" alt="Not Found">
+            <p>Adaçayı</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Adaçayı</p>
+                <p style="margin-top: -5px;">20₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün21.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="22a">
+        <div class="card-container">
+            <img src="images/karakovan-bali_preview_rev_1.png" alt="Not Found">
+            <p>Karakovan Kır Balı</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Karakovan Kır Balı</p>
+                <p style="margin-top: -5px;">450₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün22.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="23a">
+        <div class="card-container">
+            <img src="images/lavanta-kesesi_preview_rev_1.png" alt="Not Found">
+            <p>Lavanta Kesesi</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Lavanta Kesesi</p>
+                <p style="margin-top: -5px;">10₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün23.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="24a">
+        <div class="card-container">
+            <img src="images/sarı-duble-yumurta_preview_rev_1.png" alt="Not Found">
+            <p>Sarı Double Yumurta</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Sarı Double Yumurta</p>
+                <p style="margin-top: -5px;">90₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün24.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+    <div class="card" id="25a">
+        <div class="card-container">
+            <img src="images/elma-kurusu_preview_rev_1.png" alt="Not Found">
+            <p>Elma Kurusu</p>
+        </div>
+        <div class="card-ek-container">
+            <div class="card-info">
+                <p>Elma Kurusu</p>
+                <p style="margin-top: -5px;">40₺</p>
+            </div>
+            <div style="display: flex; margin-bottom: -50px;">
+                <button class="btn-add">Sepete Ekle</button>
+                <a href="ürün25.html" style="text-decoration: none;">
+                    <button>Ürün Detay</button>
+                </a>
+            </div>
+        </div>  
+    </div>
+    
+      
+        
+<div class="card" id="26a">
+    <div class="card-container">
+        <img src="images/petek-kır-balı_preview_rev_1.png" alt="Not Found">
+        <p>Petek Kır Balı</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Petek Kır Balı</p>
+            <p style="margin-top: -5px;">400₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün26.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="27a">
+    <div class="card-container">
+        <img src="images/ekinezya_preview_rev_1.png" alt="Not Found">
+        <p>Ekinezya Çayı</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Ekinezya Çayı</p>
+            <p style="margin-top: -5px;">20₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün27.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="28a">
+    <div class="card-container">
+        <img src="images/fayans.png" alt="Not Found">
+        <p>Fayans</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Fayans</p>
+            <p style="margin-top: -5px;">60₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün28.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="29a">
+    <div class="card-container">
+        <img src="images/elma-sirkesi_preview_rev_1.png" alt="Not Found">
+        <p>Elma Sirkesi</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Elma Sirkesi</p>
+            <p style="margin-top: -5px;">40₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün29.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="30a">
+    <div class="card-container">
+        <img src="images/bıldırcın_preview_rev_1.png" alt="Not Found">
+        <p>Bıldırcın</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Bıldırcın</p>
+            <p style="margin-top: -5px;">25₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün30.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="31a">
+    <div class="card-container">
+        <img src="images/gezen-tavuk-eski_preview_rev_1.png" alt="Not Found">
+        <p>Gezen Tavuk Yumurtası (Eski)</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Gezen Tavuk Yumurtası (Eski)</p>
+            <p style="margin-top: -5px;">100₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün31.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="32a">
+    <div class="card-container">
+        <img src="images/bıldırcın-eti_preview_rev_1.png" alt="Not Found">
+        <p>Bıldırcın Eti</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Bıldırcın Eti</p>
+            <p style="margin-top: -5px;">30₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün32.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="33a">
+    <div class="card-container">
+        <img src="images/beyaz-duble-yumurta_preview_rev_1.png" alt="Not Found">
+        <p>Beyaz Double Yumurta</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Beyaz Double Yumurta</p>
+            <p style="margin-top: -5px;">88₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün33.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="34a">
+    <div class="card-container">
+        <img src="images/gezen-tavuk_preview_rev_1.png" alt="Not Found">
+        <p>Gezen Tavuk Yumurtası</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Gezen Tavuk Yumurtası</p>
+            <p style="margin-top: -5px;">95₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün34.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="35a">
+    <div class="card-container">
+        <img src="images/kantaron-yagi_preview_rev_1.png" alt="Not Found">
+        <p>Kantaron Yağı</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Kantaron Yağı</p>
+            <p style="margin-top: -5px;">17₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün35.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="36a">
+    <div class="card-container">
+        <img src="images/sari-eski-ana_preview_rev_1.png" alt="Not Found">
+        <p>Sarı Eski Ana Yumurta</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Sarı Eski Ana Yumurta</p>
+            <p style="margin-top: -5px;">88₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün36.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="37a">
+    <div class="card-container">
+        <img src="images/beyaz-eski-ana_preview_rev_1.png" alt="Not Found">
+        <p>Beyaz Eski Ana Yumurta</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Beyaz Eski Ana Yumurta</p>
+            <p style="margin-top: -5px;">85₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün37.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+<div class="card" id="38a">
+    <div class="card-container">
+        <img src="images/lavanta_preview_rev_1.png" alt="Not Found">
+        <p>Lavanta</p>
+    </div>
+    <div class="card-ek-container">
+        <div class="card-info">
+            <p>Lavanta</p>
+            <p style="margin-top: -5px;">20₺</p>
+        </div>
+        <div style="display: flex;">
+            <button class="btn-add">Sepete Ekle</button>
+            <a href="ürün38.html" style="text-decoration: none;">
+                <button>Ürün Detay</button>
+            </a>
+        </div>
+    </div>  
+</div>
+
+
+
+          </div>
+    </div>
+
+
+
+<script>
+
+document.querySelector(".btn-success").addEventListener("click", function () {
+    if (cartItems.length === 0) {
+        // Sepet boşsa uyarı ver
+        alert("Sepetiniz boş!");
+        event.preventDefault();
+
+    } else {
+        // Sepet doluysa sepeti göster/gizle
+        cartList.style.display = cartList.style.display === "block" ? "none" : "block";
+    }
+});
+  // Sepet işlemleri
+const cartItems = [];
+const cartList = document.getElementById("cart-list");
+const cartItemsContainer = document.getElementById("cart-items");
+const cartCount = document.getElementById("cart-count");
+const totalPriceElement = document.getElementById("total-price");
+
+// Sepete ürün ekleme
+function addToCart(product) {
+    // Ürün zaten sepette var mı kontrol et
+    const existingItem = cartItems.find(item => item.name === product.name);
+    if (existingItem) {
+        // Eğer varsa adetini artır
+        existingItem.quantity += 1;
+    } else {
+        // Yoksa yeni ürün olarak ekle
+        product.quantity = 1;
+        cartItems.push(product);
+    }
+    updateCartUI();
+}
+
+// Sepeti güncelleme
+// Sepeti güncelleme
+function updateCartUI() {
+    cartItemsContainer.innerHTML = "";
+    let totalPrice = 0;
+
+    cartItems.forEach((item, index) => {
+        const itemTotalPrice = item.quantity * parseFloat(item.price);
+        totalPrice += itemTotalPrice;
+
+        const listItem = document.createElement("li");
+        listItem.classList.add("list-item");
+        listItem.innerHTML = `
+            <div class="item-info">
+              <img src="${item.image}" alt="product" class="img-fluid" style="max-height:50px; margin-left: -30px;">
+                <span class="title">${item.name}</span>
+                <span class="quantity">Adet: ${item.quantity}</span>
+                <span class="price">Fiyat: ${item.price}</span>
+                <span class="item-total-price">Toplam: ${itemTotalPrice.toFixed(2)}₺</span>
+            </div>
+            <button class="btn-delete" data-index="${index}" style="height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  border: 1px solid black;">
+                <i class="fas fa-trash-alt text-danger"></i>
+            </button>
+            
+        `;
+        cartItemsContainer.appendChild(listItem);
+    });
+
+    // Toplam fiyatı güncelle
+    totalPriceElement.textContent = `${totalPrice.toFixed(2)}₺`;
+    cartCount.textContent = cartItems.reduce((total, item) => total + item.quantity, 0);
+}
+
+// Sepet simgesine tıklandığında sepeti göster/gizle
+document.querySelector(".cart-icon").addEventListener("click", function () {
+    cartList.style.display = cartList.style.display === "block" ? "none" : "block";
+});
+
+// Ürünlerin "Sepete Ekle" butonlarına tıklama olayı ekle
+const btnAdds = document.querySelectorAll(".btn-add");
+
+btnAdds.forEach((btn, index) => {
+    btn.addEventListener("click", function () {
+        const product = {
+            name: document.querySelectorAll(".card-info p")[index * 2].textContent,
+            price: document.querySelectorAll(".card-info p")[index * 2 + 1].textContent,
+            image: document.querySelectorAll(".card-container img")[index].src
+        };
+        addToCart(product);
+    });
+});
+
+// Sepetten ürün kaldırma
+cartItemsContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-delete")) {
+        const index = e.target.getAttribute("data-index");
+        cartItems.splice(index, 1);
+        updateCartUI();
+    }
+});
+
+// Sayfa yüklendiğinde çalışacak script
+document.addEventListener("DOMContentLoaded", function () {
+    // Menü öğelerine tıklama olayı ekleyin
+    const menuItems = document.querySelectorAll('.urunler-menu-ul li .a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            // Tüm menü öğelerinden active sınıfını kaldır
+            menuItems.forEach(i => i.classList.remove('active'));
+            // Tıklanan öğeye active sınıfını ekle
+            item.classList.add('active');
+        });
+    });
+});
+</script>
+</body>
+</html>
